@@ -7,13 +7,15 @@ const MovieSideBar = (props) => {
 
     return (
         <div className="movie-sidebar">
-            <h2 className="movie-sidebar">Movie Sidebar</h2>
-            {props.movieList.map((movieItem, index) => {
-                return (
-                    // this is making th emovie title the link and then display the movie title
-                    <Link to={`/movies/${movieItem.Title}`}>{movieItem.Title}</Link>
-                )
-            })}
+            <header className="movie-sidebar">
+                <h2 >Movie Sidebar</h2>
+                {props.movieList.map((movieItem, index) => {
+                    return (
+                        // this is making th emovie title the link and then display the movie title
+                        <Link to={`/movies/${movieItem.Title}`}>{movieItem.Title}</Link>
+                    )
+                })}
+            </header>
         </div >
     )
 }

@@ -13,7 +13,7 @@ const MovieFormPage = (props) => {
         <div>
             <h1>Movie Form Page</h1>
             <label>Title: </label>
-            <input type="text" value={title} placeholder="Title" onChange={(e) => { setTitle(e.target.value) }} className="movie-form-input"></input>
+            <input type="text" value={title} placeholder="" onChange={(e) => { setTitle(e.target.value) }} className="movie-form-input"></input>
             <br />
 
             <label>Year: </label>
@@ -26,6 +26,7 @@ const MovieFormPage = (props) => {
 
             <label>Release: </label>
             <input type="text" value={release} placeholder="" onChange={(e) => { setRelease(e.target.value) }} className="movie-form-input"></input>
+            <br />
             <br />
 
 
