@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import "./MovieFormPage.css"
 
 const MovieFormPage = (props) => {
 
@@ -9,7 +10,7 @@ const MovieFormPage = (props) => {
         <div>
             <h1>Movie Form Page</h1>
             <label>The Title</label>
-            <input type="text" value={title} placeholder="Title" onChange={(e) => { setTitle(e.target.value) }}></input>
+            <input type="text" value={title} placeholder="Title" onChange={(e) => { setTitle(e.target.value) }} className="movie-form-input"></input>
             <button onClick={() => {
                 handleAddMovie(title)
             }}>Add Movie</button>
