@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
+
+// MovieSideBar is recieving movieList as props which is mapped through to be displayed as a title clickable link for the user
 const MovieSideBar = (props) => {
 
-    //  <Link to="/"> Home </Link>
-
     return (
-        <div classname="movie-sidebar">
+        <div className="movie-sidebar">
             <h2>Movie Sidebar</h2>
             {props.movieList.map((movieItem, index) => {
                 return (

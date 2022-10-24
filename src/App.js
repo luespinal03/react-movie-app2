@@ -3,10 +3,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import ErrorPage from "./error-page";
 import NavLayout from "./Layouts/NavLayout";
 import HomePage from "./Pages/HomePage"
-import MovieSideBar from "./Components/MovieSidebar";
 import MovieListPage from "./Pages/MovieListPage";
 import { useState } from 'react';
 import MovieLayout from './Layouts/MovieLayout'
+import MoviePage from "./Pages/MoviePage";
+import MovieFormPage from "./Pages/MovieFormPage";
+
+
+
+// Original list holding the movies array holding our dummy data
 const sampleMovies = [
   {
     "Title": "Avatar",
@@ -484,12 +489,24 @@ const sampleMovies = [
 
 const App = () => {
 
+  // here we are giving movieList the value of spreaded out sampleMovies array. In other words we are giving it acess to the array. 
+  const [movieList, setMovieList] = useState([...sampleMovies]);
 
 
-  const [movieList, setMovieList] = useState([...sampleMovies])
+
+  const handleAddMovie = (title) => {
+    const newMovie = {
+      Title: title
+    }
+    // line below is adding the newMovie into movieList which essentially its the same as sampleMovies array
+    setMovieList([...movieList, newMovie])
+  }
 
 
 
+
+
+  // here we are creating the different routes the user is going to use to reach different information when the user types in the path, the element is where it would take the user to.
   const router = createBrowserRouter([
 
     {
@@ -510,15 +527,22 @@ const App = () => {
               // "index: true" is another way of saying "render this element when the parent path is rendered"
               index: true,
               element: <MovieListPage movieList={movieList} />
-            }
-
+            },
+            {
+              path: "/movies/form",
+              element: <MovieFormPage handleAddMovie={handleAddMovie} />
+            },
+            {
+              path: "/movies/:title",
+              element: <MoviePage movieList={movieList} />
+            },
           ]
         }
       ]
     },
   ]);
 
-
+  // return component <RouterProvider/> with router={router} as a props
   return (
     <div className="App-header">
       <RouterProvider router={router} />
