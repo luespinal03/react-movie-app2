@@ -20,7 +20,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #023e8a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -69,6 +69,7 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
+  color: #06d6a0;
 }
 
 .movie-content {
@@ -76,7 +77,7 @@
 }
 
 a {
-  color: white;
+  color: #06d6a0;
 }
 
 .movie-list {
@@ -85,15 +86,17 @@ a {
 }
 
 .movie-list-card {
+  background-color: #06d6a0;
   border: 1px solid white;
-  margin: 10px;
+  border-radius: 50px;
+  margin: 40px;
   padding: 20px;
 }
 
 h1 {
   font-size: 3rem;
   letter-spacing: 0.9px;
-  background: linear-gradient(90deg, #7209b7, rgba(249, 211, 180, 0) 100%);
+  background: linear-gradient(90deg, #06d6a0, rgba(249, 211, 180, 0) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -104,17 +107,21 @@ button {
   padding: 20px 40px;
   border-radius: 0.5rem;
   margin-left: 15px;
-  color: #a1a1a1;
+  color: #023e8a;
   font-family: var(--font-raleway);
   font-weight: 900;
   letter-spacing: 0.75px;
   font-size: 1.25rem;
   cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  background: #06d6a0;
+  -webkit-box-shadow: 5px 5px 7px #06d6a0, -5px -5px 7px #06d6a0;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
 
-.movie-sidebar {
-  color: #7209b7;
+.movie-list-card {
+  color: #023e8a;
+}
+
+.movie-form-input {
+  height: 20%;
 }

@@ -494,9 +494,12 @@ const App = () => {
 
 
 
-  const handleAddMovie = (title) => {
+  const handleAddMovie = (title, year, rated, release) => {
     const newMovie = {
-      Title: title
+      Title: title,
+      Year: year,
+      Rated: rated,
+      Release: release
     }
     // line below is adding the newMovie into movieList which essentially its the same as sampleMovies array
     setMovieList([...movieList, newMovie])
