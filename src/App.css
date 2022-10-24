@@ -125,3 +125,7 @@ button {
 .movie-form-input {
   height: 20%;
 }
+
+img {
+  height: 300px;
+}
