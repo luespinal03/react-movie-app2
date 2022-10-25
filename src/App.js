@@ -556,6 +556,7 @@ const App = () => {
     <div className="App-header">
       {/* code below is sending the routes we have created into the RouterProvider */}
       <RouterProvider router={router} />
+
     </div>
   );
 }

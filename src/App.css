@@ -87,7 +87,7 @@ a {
 
 .movie-list-card {
   background-color: #06d6a0;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   border-radius: 50px;
   max-width: 800px;
   margin: 40px;
@@ -97,7 +97,8 @@ a {
 h1 {
   font-size: 3rem;
   letter-spacing: 0.9px;
-  background: linear-gradient(90deg, #06d6a0, rgba(249, 211, 180, 0) 100%);
+  /* background: linear-gradient(90deg, #06d6a0, rgba(249, 211, 180, 0) 100%); */
+  background-color: #06d6a0;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -129,6 +130,10 @@ button {
 
 img {
   height: 350px;
-  padding-left: 100px;
-  /* border-radius: 50px; */
+  padding: 40px;
+  border-radius: 80px;
+}
+
+.popcorn {
+  height: 600px;
 }
