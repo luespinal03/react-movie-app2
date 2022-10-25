@@ -1,6 +1,6 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import ErrorPage from "./error-page";
+import ErrorPage from "./error-page";
 import NavLayout from "./Layouts/NavLayout";
 import HomePage from "./Pages/HomePage"
 import MovieListPage from "./Pages/MovieListPage";
@@ -494,10 +494,11 @@ const App = () => {
 
 
 
-  const handleAddMovie = (title, year, rated, release) => {
+  const handleAddMovie = (title, year, director, rated, release) => {
     const newMovie = {
       Title: title,
       Year: year,
+      Director: director,
       Rated: rated,
       Release: release
     }
@@ -512,29 +513,34 @@ const App = () => {
   // here we are creating the different routes the user is going to use to reach different information when the user types in the path, the element is where it would take the user to.
   const router = createBrowserRouter([
 
+    // this path takes us to the home page and shows us the stuff inside the <Navlayout/> component
     {
       path: "/",
       element: <NavLayout />,
-      // errorElement: <ErrorPage />,
+      errorElement: <ErrorPage />,
       children: [
         {
-          // index is true in order to make it default element that displays for the path
+          // index is true in order to make it default element that displays for the path?
           index: true,
           element: <HomePage />
         },
+        // path below takes us to the Movie list section and renders the stuff inside <MovieLayout/> component as we pass the list of movies (movieList) as a prop into <MovieLayout/> component
         {
           path: "/movies",
           element: <MovieLayout movieList={movieList} />,
           children: [
             {
               // "index: true" is another way of saying "render this element when the parent path is rendered"
+              //  here we pass movieList as a prop because in MovieListPage is where we are mapping through the movieList in order to pass each individual movie into <MovieCard/> component
               index: true,
               element: <MovieListPage movieList={movieList} />
             },
+            // path below renders when we click on Movie Form, we are also passing the function handleAddMovie into MovieFormPage. This function is responsible for creating the new movie based on user input (refer to code above to see)
             {
               path: "/movies/form",
               element: <MovieFormPage handleAddMovie={handleAddMovie} />
             },
+            // path below renders when the user clicks on one of the movie titles on the left. These movie titles are links that once clicked it will render the appropiate information based on the title the user clicked on
             {
               path: "/movies/:title",
               element: <MoviePage movieList={movieList} />
@@ -548,6 +554,7 @@ const App = () => {
   // return component <RouterProvider/> with router={router} as a props
   return (
     <div className="App-header">
+      {/* code below is sending the routes we have created into the RouterProvider */}
       <RouterProvider router={router} />
     </div>
   );

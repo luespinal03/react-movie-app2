@@ -1,6 +1,6 @@
 import MovieCard from "../Components/MovieCard";
 
-
+// takes
 const MovieListPage = (props) => {
     console.log(props.movieList)
     return (
@@ -10,7 +10,7 @@ const MovieListPage = (props) => {
                 {props.movieList.map((movie, index) => {
                     return (
                         // returning each movie to the <MovieCard/> component
-                        <MovieCard movie={movie} />
+                        <MovieCard key={index} movie={movie} />
                     )
                 })}
             </div>

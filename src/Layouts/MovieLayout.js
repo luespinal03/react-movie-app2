@@ -2,7 +2,7 @@ import MovieSideBar from "../Components/MovieSidebar"
 import { Outlet } from 'react-router-dom';
 
 // here MovieLayout is recieving movieList through props which is then being passed into MovieSideBar as a props
-const MoiveLayout = (props) => {
+const MovieLayout = (props) => {
     return (
         <div className="movie-layout">
             <MovieSideBar movieList={props.movieList} />
@@ -13,4 +13,4 @@ const MoiveLayout = (props) => {
     )
 }
 
-export default MoiveLayout;
+export default MovieLayout;
